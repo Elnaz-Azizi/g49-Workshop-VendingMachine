@@ -1,6 +1,6 @@
 package se.lexicon.Model;
 
-public class Product {
+public abstract class Product extends Object {
     //Fields
     private static int sequencer = 0;
     private int id;
@@ -9,12 +9,13 @@ public class Product {
     private String productName;
 
     //Constructors
-    public Product(double price, String productName) {
+    public Product(String productName, double price) {
         this.price = price;
         this.productName = productName;
-        this.id= getNextId();
+        this.id = getNextId();
 
     }
+
     //Setters
 
     public void setId(int id) {

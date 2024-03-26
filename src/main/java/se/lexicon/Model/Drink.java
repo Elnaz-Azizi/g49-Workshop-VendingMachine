@@ -1,27 +1,23 @@
 package se.lexicon.Model;
 
-public class Candy extends Product {
+public class Drink extends Product {
     //Fields
-    private String type;
-
     private String taste;
+    private boolean carbo;
 
     //Constructor
-
-    public Candy(String productName, double price, String type, String taste) {
+    public Drink(String productName, double price, String type, String taste) {
         super(productName, price);
         this.taste = taste;
-        this.type = type;
     }
 
     //Setters
 
-    //Getters
-
-
-    public String getType() {
-        return type;
+    public boolean isCarbo() {
+        return true;
     }
+
+    //Getters
 
     public String getTaste() {
         return taste;
@@ -30,7 +26,7 @@ public class Candy extends Product {
     //Methods
     @Override
     public String examine() {
-        return "Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice();
+        return "Name: " + getProductName() + "\n" + "\n" + "Taste: " + getTaste() + "\n" + carbo + "Price: " + getPrice();
     }
 
     @Override

@@ -9,14 +9,14 @@ import se.lexicon.Model.*;
 public class App 
 {
     public static void main( String[] args ){
-        Soda soda1 = new Soda(10,"colacola","cola");
-        System.out.println(soda1.examine());
-        System.out.println(soda1.use());
+       Drink drink1 = new Drink("CubaCola",10,"Soda","Cola");
+       System.out.println(drink1.examine());
+       System.out.println(drink1.use());
 
-        Snack chips = new Snack(25,"Chipsolle", "potatis", "dill");
-        System.out.println(chips.examine());
+       Snack chips = new Snack("Hillbilly", SnackType.CHIPS, "dill");
+       System.out.println(chips.examine());
 
-        Candy gum = new Candy(35,"Special",CandyType.GUM, CandyTaste.BLUEBERRY);
+        Candy gum = new Candy("HollyMolly",10,"HardCandy","Lemon");
         System.out.println(gum.examine());
     }
 }
