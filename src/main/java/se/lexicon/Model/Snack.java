@@ -20,7 +20,7 @@ public class Snack extends Product {
     //Methods
     @Override
     public String examine() {
-        return "Name: " + getProductName() + "\n" + "Type: " + type + "\n" + "Taste: " + taste + "\n" + "Price: " + getPrice();
+        return "Product" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + type + "\n" + "Taste: " + taste + "\n" + "Price: " + getPrice()+"\n";
     }
 
     @Override

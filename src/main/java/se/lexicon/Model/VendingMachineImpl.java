@@ -32,12 +32,12 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public Product request(int id) { // 4
-        for (int i = 0; i < products.length; i++) {// iterate on the array
-            if (products[i].getId() == id) { // check the id to find
-                if (depositPool >= products[i].getPrice()){// if id exist in the array of products
-                    depositPool -= products[i].getPrice();// count and modify the depositPool
-                    return products[i];// return the found product
-                }else {
+        for (Product product : products) {// iterate on the array
+            if (product.getId() == id) { // check the id to find
+                if (depositPool >= product.getPrice()) {// if id exist in the array of products
+                    depositPool -= product.getPrice();// count and modify the depositPool
+                    return product;// return the found product
+                } else {
                     System.out.println("Not enough money");
                 }
             }
@@ -67,7 +67,7 @@ public class VendingMachineImpl implements IVendingMachine {
     public String[] getProducts() {
         String[] productInfo = new String[products.length];
         for (int i = 0; i < products.length; i++) {
-            productInfo[i] = products[i].getId() + "\n" + products[i].getProductName() + "\n" + products[i].getPrice();
+            productInfo[i] = products[i].examine();
         }
         return productInfo;
     }

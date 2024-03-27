@@ -29,7 +29,7 @@ public class Candy extends Product {
     //Methods
     @Override
     public String examine() {
-        return "Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice();
+        return "Product" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice()+ "\n";
     }
 
     @Override
