@@ -3,7 +3,6 @@ package se.lexicon.Model;
 public class Candy extends Product {
     //Fields
     private String type;
-
     private String taste;
 
     //Constructor

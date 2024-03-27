@@ -18,5 +18,7 @@ public class App
 
         Candy gum = new Candy("HollyMolly",10,"HardCandy","Lemon");
         System.out.println(gum.examine());
+        Product[] products = {drink1,chips,gum};
+        VendingMachineImpl vendingMachine = new VendingMachineImpl(products);
     }
 }

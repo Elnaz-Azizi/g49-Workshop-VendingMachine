@@ -16,6 +16,13 @@ public abstract class Product extends Object {
 
     }
 
+    public Product(double price, String productName) {
+        this.price = price;
+        this.productName = productName;
+        this.id = getNextId();
+
+    }
+
     //Setters
 
     public void setId(int id) {
@@ -27,6 +34,10 @@ public abstract class Product extends Object {
     }
 
     //Getters
+
+    public int getId() {
+        return id;
+    }
 
     private static int getNextId() {
         return ++sequencer;
