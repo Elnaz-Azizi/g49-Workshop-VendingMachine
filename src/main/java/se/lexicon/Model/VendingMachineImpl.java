@@ -36,14 +36,16 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public Product request(int id) { // 4
-        // iterate on the array
-        // check the id to find
-        // if id exist in the array of products
-        // check if the product price is <= depositPool
-        // count and modify the depositPool
-        // return the found product
-
-
+        for (int i = 0; i < products.length; i++) {// iterate on the array
+            if (products[i].getId() == id) { // check the id to find
+                if (depositPool >= products[i].getPrice()){// if id exist in the array of products
+                    depositPool -= products[i].getPrice();// count and modify the depositPool
+                    return products[i];// return the found product
+                }else {
+                    System.out.println("Not enough money");
+                }
+            }
+        }
         return null;
     }
 
