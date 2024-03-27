@@ -13,18 +13,14 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public void addCurrency(double amount) { // 10
-        // validate the amount that should be in the array
-        // yes-> add to depositPool
-        // No -< throw error with a proper message
-        //boolean isValid = false;
-        for (int validAmount : VALID_AMOUNTS) {
+        for (int validAmount : VALID_AMOUNTS) { // validate the amount that should be in the array
             if (validAmount == amount) {
-                depositPool += amount;
+                depositPool += amount;// yes-> add to depositPool
                 //isValid = true;
                 break;
             }
         }
-        //if (!isValid) throw new IllegalArgumentException("invalid amount");
+
 
     }
 
@@ -61,7 +57,7 @@ public class VendingMachineImpl implements IVendingMachine {
     public String getDescription(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
-                return product.getProductName();
+                return product.use();
             }
         }
         return "Product not found";

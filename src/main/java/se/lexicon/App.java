@@ -2,6 +2,8 @@ package se.lexicon;
 
 import se.lexicon.Model.*;
 
+import java.util.Arrays;
+
 /**
  * Hello world!
  *
@@ -20,5 +22,16 @@ public class App
         System.out.println(gum.examine());
         Product[] products = {drink1,chips,gum};
         VendingMachineImpl vendingMachine = new VendingMachineImpl(products);
+        vendingMachine.addCurrency(5);
+        System.out.println(vendingMachine.getBalance());
+        //System.out.println();
+        vendingMachine.request(1);
+        //System.out.println();
+        System.out.println(vendingMachine.getBalance());
+        System.out.println("---------");
+        System.out.println(Arrays.toString(vendingMachine.getProducts()));
+        System.out.println("---------");
+        System.out.println(vendingMachine.getDescription(1));
+        System.out.println("---------");
     }
 }
