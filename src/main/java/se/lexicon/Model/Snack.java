@@ -1,7 +1,7 @@
 package se.lexicon.Model;
 
 public class Snack implements IProduct{
-    private static int sequencer = 20;
+    private final int id;
     private String productName;
     private double price;
     private final String type;
@@ -9,12 +9,12 @@ public class Snack implements IProduct{
 
 
     //Constructors
-    public Snack(String productName, double price, String type, String taste){
+    public Snack(String productName, double price, String type, String taste, int id){
         this.price = price;
         this.productName = productName;
         this.type = type;
         this.taste = taste;
-        int id = getId();
+        this.id = id;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Snack implements IProduct{
 
     @Override
     public int getId() {
-        return ++sequencer;
+        return id;
     }
 
     @Override

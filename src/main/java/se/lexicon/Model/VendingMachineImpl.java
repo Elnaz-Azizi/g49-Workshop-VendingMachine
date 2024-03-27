@@ -1,19 +1,24 @@
 package se.lexicon.Model;
 
-public class VendingMachine implements IVendingMachine {
-    private IProduct[] products = new IProduct[0];
+public class VendingMachineImpl implements IVendingMachine {
+    private final IProduct[] products;
     private int depositPool;
 
-    public VendingMachine(IProduct[] products) {
+    public VendingMachineImpl(IProduct[] products) {
         this.products = products;
+        this.depositPool = 0;
     }
 
     @Override
     public void addCurrency(double amount) {
-        if (amount == 1 || amount == 2 || amount == 5 || amount == 20 || amount == 50 || amount == 100 || amount == 200 || amount == 500 || amount == 1000) {
+        // Check if the amount is a valid denomination
+        if (amount == 1 || amount == 2 || amount == 5 || amount == 10 || amount == 20 ||
+                amount == 50 || amount == 100 || amount == 200 || amount == 500 || amount == 1000) {
+            // Add the amount to the deposit pool
             depositPool += amount;
         } else {
-            throw new IllegalArgumentException("Amount not valid, Enter 1,2,5,10,20,50,100,200,500,1000");
+            // Throw an exception if the amount is not a valid denomination
+            throw new IllegalArgumentException("Invalid denomination: " + amount);
         }
     }
 
