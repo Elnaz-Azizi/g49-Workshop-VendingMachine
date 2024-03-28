@@ -17,12 +17,12 @@ public class App {
                 new Candy("Chocolate bar", 15, "Chocolate", "Sweet"),
                 new Candy("Gummy Bears", 20, "Candy", "Fruity"),
                 new Candy("Lollipop", 10, "Lollipop", "Sour"),
-                new Snack("Potato Chips", 25, "Snack", "Dill Flavor"),
-                new Snack("Pretzels", 13, "Snack", "Plain"),
-                new Snack("Popcorn", 13, "Popcorn", "Salt"),
                 new Drink("Cola", 20, "Soda", "Cola Flavor"),
                 new Drink("Orange Juice", 17, "Juice", "Orange Flavor"),
-                new Drink("Water", 15, "Water", "Plain")};
+                new Drink("Water", 15, "Water", "Plain"),
+                new Snack("Potato Chips", 25, "Snack", "Dill Flavor"),
+                new Snack("Pretzels", 13, "Snack", "Plain"),
+                new Snack("Popcorn", 13, "Popcorn", "Salt")};
 
         IVendingMachine vendingMachine = new VendingMachineImpl(products);
 
@@ -66,44 +66,6 @@ public class App {
         scanner.close();
     }
 }
-// Create an array of products
-
-
-
-       /*
-        // Create an instance of the vending machine
-        IVendingMachine vendingMachine = new VendingMachineImpl(products);
-
-        // Test addCurrency method
-        vendingMachine.addCurrency(100);
-        vendingMachine.addCurrency(5);
-
-        System.out.println(Arrays.toString(vendingMachine.getProducts()));
-
-        // Test getBalance method
-        System.out.println("Balance: " + vendingMachine.getBalance());
-
-        // Test request method
-
-        IProduct selectedProductIndex = vendingMachine.request(101); // Assuming product ID 1 is selected
-
-
-
-        // Test endSession method
-        int change = vendingMachine.endSession();
-        System.out.println("Change returned: " + change);
-
-        // Test getDescription method
-        System.out.println("Description for product with ID 201: " + vendingMachine.getDescription(201));
-
-        // Test getProducts method
-        String[] productInfo = vendingMachine.getProducts();
-        System.out.println("Products available:");
-        for (String info : productInfo) {
-            System.out.println(info);
-        }
-
-        */
 
 
 
