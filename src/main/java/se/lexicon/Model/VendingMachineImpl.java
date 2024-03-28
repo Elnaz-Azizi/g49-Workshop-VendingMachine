@@ -13,15 +13,14 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public void addCurrency(double amount) { // 10
-        for (int validAmount : VALID_AMOUNTS) { // validate the amount that should be in the array
-            if (validAmount == amount) {
+        for (ValidAmount validamount: ValidAmount.values()) { // validate the amount that should be in the array
+            if (validamount.getAmount() == amount) {
                 depositPool += amount;// yes-> add to depositPool
                 //isValid = true;
                 break;
             }
         }
-
-
+        System.out.println("Invalid amount. Enter accepted amount: "+ Arrays.toString(ValidAmount.values()));
     }
 
 
