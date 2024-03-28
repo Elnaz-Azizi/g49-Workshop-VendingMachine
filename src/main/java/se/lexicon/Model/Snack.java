@@ -1,6 +1,9 @@
 package se.lexicon.Model;
 
+import java.util.UUID;
+
 public class Snack implements IProduct{
+    private static int sequencer = 300;
     private final int id;
     private String productName;
     private double price;
@@ -9,17 +12,30 @@ public class Snack implements IProduct{
 
 
     //Constructors
-    public Snack(String productName, double price, String type, String taste, int id){
+    public Snack(String productName, double price, String type, String taste){
         this.price = price;
         this.productName = productName;
         this.type = type;
         this.taste = taste;
-        this.id = id;
+        this.id = getNextId();
+    }
+
+
+    private static int getNextId() {
+        return ++sequencer;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getTaste() {
+        return taste;
     }
 
     @Override
     public String examine() {
-        return "Name: " + getProductName() + "\n" + "Type: " + type + "\n" + "Taste: " + taste + "\n" + "Price: " + getPrice();
+        return "Product" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice()+ "\n";
     }
 
     @Override

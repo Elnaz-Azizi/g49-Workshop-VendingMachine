@@ -15,9 +15,9 @@ public class App
     {
         // Create an array of products
         IProduct[] products = {
-                new Candy("Candy", 10, "lemonade","lemon", 2),
-                new Snack("Chipp", 13,"Chips","dill",3),
-                new Drink("soda2", 15,"soda","lemon",4)};
+                new Candy("Candy", 10, "lemonade","lemon"),
+                new Snack("Chipp", 13,"Chips","dill"),
+                new Drink("soda2", 15,"soda","lemon")};
 
         // Create an instance of the vending machine
         IVendingMachine vendingMachine = new VendingMachineImpl(products);
@@ -32,10 +32,10 @@ public class App
         System.out.println("Balance: " + vendingMachine.getBalance());
 
         // Test request method
-        int selectedProductIndex = vendingMachine.request(2); // Assuming product ID 1 is selected
-        if (selectedProductIndex != -1) {
-            System.out.println("Product dispensed: " + products[selectedProductIndex].getProductName());
-        }
+
+        IProduct selectedProductIndex = vendingMachine.request(1); // Assuming product ID 1 is selected
+
+
 
         // Test endSession method
         int change = vendingMachine.endSession();

@@ -1,7 +1,9 @@
 package se.lexicon.Model;
 
-public class Candy implements IProduct{
+import java.util.UUID;
 
+public class Candy implements IProduct{
+    private static int sequencer = 100;
     private final int id;
     private String productName;
     private double price;
@@ -10,17 +12,29 @@ public class Candy implements IProduct{
 
 
     //Constructors
-    public Candy(String productName, double price, String type, String taste, int id){
+    public Candy(String productName, double price, String type, String taste){
         this.price = price;
         this.productName = productName;
         this.type = type;
         this.taste = taste;
-        this.id = id;
+        this.id = getNextId();
+    }
+
+    private static int getNextId() {
+        return ++sequencer;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getTaste() {
+        return taste;
     }
 
     @Override
     public String examine() {
-        return "Name: " + getProductName() + "\n" + "Type: " + type + "\n" + "Taste: " + taste + "\n" + "Price: " + getPrice();
+        return "Product" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice()+ "\n";
     }
 
     @Override

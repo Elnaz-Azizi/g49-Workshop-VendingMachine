@@ -28,19 +28,18 @@ public class VendingMachineImpl implements IVendingMachine {
     }
 
     @Override
-    public int request(int id) {
-        for (int i = 0; i < products.length; i++) {
-            if (products[i].getId() == id) {
-                if (depositPool >= products[i].getPrice()) {
-                    depositPool -= products[i].getPrice();
-                    return i;
+    public IProduct request(int id) { // 4
+        for (IProduct product : products) {// iterate on the array
+            if (product.getId() == id) { // check the id to find
+                if (depositPool >= product.getPrice()) {// if id exist in the array of products
+                    depositPool -= product.getPrice();// count and modify the depositPool
+                    return product;// return the found product
                 } else {
-                    System.out.println("Insufficient funds");
+                    System.out.println("Not enough money");
                 }
             }
         }
-        System.out.println("Product not found");
-        return -1;
+        return null;
     }
 
     @Override
@@ -52,9 +51,9 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public String getDescription(int id) {
-        for (int i = 0; i < products.length; i++) {
-            if (products[i].getId() == id) {
-                return products[i].getProductName();
+        for (IProduct product : products) {
+            if (product.getId() == id) {
+                return product.use();
             }
         }
         return "Product not found";
@@ -64,7 +63,7 @@ public class VendingMachineImpl implements IVendingMachine {
     public String[] getProducts() {
         String[] productInfo = new String[products.length];
         for (int i = 0; i < products.length; i++) {
-            productInfo[i] = products[i].getId() + "\n" + products[i].getProductName() + "\n" + products[i].getPrice();
+            productInfo[i] = products[i].examine();
         }
         return productInfo;
     }
