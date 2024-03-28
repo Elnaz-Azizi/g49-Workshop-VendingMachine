@@ -33,7 +33,7 @@ public class App
 
         // Test request method
 
-        IProduct selectedProductIndex = vendingMachine.request(1); // Assuming product ID 1 is selected
+        IProduct selectedProductIndex = vendingMachine.request(101); // Assuming product ID 1 is selected
 
 
 
@@ -42,7 +42,7 @@ public class App
         System.out.println("Change returned: " + change);
 
         // Test getDescription method
-        System.out.println("Description for product with ID 2: " + vendingMachine.getDescription(4));
+        System.out.println("Description for product with ID 201: " + vendingMachine.getDescription(201));
 
         // Test getProducts method
         String[] productInfo = vendingMachine.getProducts();

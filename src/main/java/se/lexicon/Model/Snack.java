@@ -35,7 +35,7 @@ public class Snack implements IProduct{
 
     @Override
     public String examine() {
-        return "Product" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice()+ "\n";
+        return "Product"+ "\n" +"ID: " + getId() + "\n" + "\n" +"Name: " + getProductName() + "\n" + "Type: " + getType() + "\n" + "Taste: " + getTaste() + "\n" + "Price: " + getPrice()+ "\n";
     }
 
     @Override
